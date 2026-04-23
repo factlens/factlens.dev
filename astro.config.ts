@@ -21,7 +21,7 @@ const {
 
 // https://astro.build/config
 const config = defineConfig({
-	site: 'https://spectre.lou.gg',
+	site: 'https://factlens.dev',
 	output: 'static',
 	integrations: [
 		expressiveCode({
