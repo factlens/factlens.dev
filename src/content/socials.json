@@ -1,17 +1,20 @@
 [
   {
-    "platform": "github",
-    "url": "https://github.com/factlens",
-    "label": "GitHub"
+    "id": 1,
+    "icon": { "type": "simple-icons", "name": "github" },
+    "text": "GitHub",
+    "link": "https://github.com/factlens"
   },
   {
-    "platform": "linkedin",
-    "url": "https://www.linkedin.com/in/javiermarin/",
-    "label": "LinkedIn"
+    "id": 2,
+    "icon": { "type": "simple-icons", "name": "linkedin" },
+    "text": "LinkedIn",
+    "link": "https://www.linkedin.com/in/javiermarin/"
   },
   {
-    "platform": "other",
-    "url": "https://arxiv.org/search/?query=javier+marin+hallucination&searchtype=all",
-    "label": "arXiv"
+    "id": 3,
+    "icon": { "type": "simple-icons", "name": "arxiv" },
+    "text": "arXiv",
+    "link": "https://arxiv.org/search/?query=javier+marin+hallucination&searchtype=all"
   }
 ]

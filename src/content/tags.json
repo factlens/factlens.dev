@@ -1,15 +1,15 @@
 [
-  "research",
-  "hallucination-detection",
-  "embeddings",
-  "SGI",
-  "DGI",
-  "taxonomy",
-  "mechanistic-interpretability",
-  "transformers",
-  "compliance",
-  "EU-AI-Act",
-  "semantic-laziness",
-  "geometric-methods",
-  "open-source"
+  { "id": "research" },
+  { "id": "hallucination-detection" },
+  { "id": "embeddings" },
+  { "id": "SGI" },
+  { "id": "DGI" },
+  { "id": "taxonomy" },
+  { "id": "mechanistic-interpretability" },
+  { "id": "transformers" },
+  { "id": "compliance" },
+  { "id": "EU-AI-Act" },
+  { "id": "semantic-laziness" },
+  { "id": "geometric-methods" },
+  { "id": "open-source" }
 ]

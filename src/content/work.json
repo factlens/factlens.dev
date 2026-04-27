@@ -1,20 +1,23 @@
 [
   {
+    "id": 1,
     "title": "Semantic Grounding Index (SGI)",
-    "description": "Ratio-based grounding verification for RAG systems. Measures whether a response engages its source material via angular geometry on the unit hypersphere.",
-    "url": "https://arxiv.org/abs/2512.13771",
-    "badge": "arXiv:2512.13771"
+    "company": "arXiv:2512.13771",
+    "duration": "December 2025",
+    "description": "Ratio-based grounding verification for RAG systems. Measures whether a response engages its source material via angular geometry on the unit hypersphere."
   },
   {
-    "title": "Geometric Taxonomy of Hallucinations",
-    "description": "Three-type hallucination classification via directional grounding. Von Mises-Fisher distributions on displacement vectors. Domain-specific calibration achieves AUROC 0.76-0.99.",
-    "url": "https://arxiv.org/abs/2602.13224",
-    "badge": "arXiv:2602.13224"
+    "id": 2,
+    "title": "A Geometric Taxonomy of Hallucinations",
+    "company": "arXiv:2602.13224",
+    "duration": "February 2026",
+    "description": "Three-type hallucination classification via directional grounding. Von Mises-Fisher distributions on displacement vectors. Domain-specific calibration achieves AUROC 0.76-0.99."
   },
   {
+    "id": 3,
     "title": "Rotational Dynamics of Factual Constraint Processing",
-    "description": "Mechanistic interpretability: transformers reject wrong answers via rotation, not rescaling. Phase transition at 1.6B parameters.",
-    "url": "https://arxiv.org/abs/2603.13259",
-    "badge": "arXiv:2603.13259"
+    "company": "arXiv:2603.13259",
+    "duration": "March 2026",
+    "description": "Mechanistic interpretability: transformers reject wrong answers via rotation, not rescaling. Phase transition at 1.6B parameters."
   }
 ]

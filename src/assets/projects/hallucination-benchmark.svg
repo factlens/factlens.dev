@@ -1,0 +1,19 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 630" width="1200" height="630">
+  <rect width="1200" height="630" fill="#0a0a0a"/>
+  <g transform="translate(200,150)">
+    <text x="0" y="0" fill="#a3a3a3" font-family="monospace" font-size="13">212 pairs | 7 domains</text>
+    <rect x="0" y="30" width="600" height="20" rx="2" fill="#1a1a1a" stroke="#404040" stroke-width="0.5"/>
+    <rect x="0" y="30" width="574" height="20" rx="2" fill="#22c55e" opacity="0.3"/>
+    <text x="620" y="45" fill="#737373" font-family="monospace" font-size="11">0.958 AUROC</text>
+    <text x="0" y="80" fill="#737373" font-family="monospace" font-size="11">LLM-generated</text>
+    <rect x="0" y="100" width="600" height="20" rx="2" fill="#1a1a1a" stroke="#404040" stroke-width="0.5"/>
+    <rect x="0" y="100" width="576" height="20" rx="2" fill="#f59e0b" opacity="0.3"/>
+    <text x="620" y="115" fill="#737373" font-family="monospace" font-size="11">0.960 AUROC</text>
+    <text x="0" y="150" fill="#737373" font-family="monospace" font-size="11">human-crafted</text>
+    <rect x="0" y="170" width="600" height="20" rx="2" fill="#1a1a1a" stroke="#404040" stroke-width="0.5"/>
+    <rect x="0" y="170" width="12" height="20" rx="2" fill="#ef4444" opacity="0.3"/>
+    <text x="620" y="185" fill="#737373" font-family="monospace" font-size="11">-0.07 cross-domain</text>
+    <text x="0" y="220" fill="#737373" font-family="monospace" font-size="11">cross-domain directions</text>
+  </g>
+  <text x="600" y="530" text-anchor="middle" fill="#a3a3a3" font-family="monospace" font-size="14">the confabulation benchmark</text>
+</svg>
