@@ -1,0 +1,33 @@
+---
+title: "factlens"
+description: "Geometric LLM hallucination detection. No second LLM. Deterministic. Auditable. Python library with CLI, provider connectors, and framework integrations."
+tags: ["open-source", "SGI", "DGI", "hallucination-detection"]
+---
+
+**factlens** is a Python library for detecting LLM hallucinations using embedding geometry.
+
+Two methods, zero LLM dependencies:
+
+- **SGI** (Semantic Grounding Index) — measures whether a response engages its source material. For RAG systems with context.
+- **DGI** (Directional Grounding Index) — measures whether a response's displacement in embedding space aligns with grounded patterns. Context-free.
+
+```bash
+pip install factlens
+```
+
+```python
+from factlens import compute_sgi, evaluate
+
+result = compute_sgi(
+    question="What is the capital of France?",
+    context="France is in Western Europe. Its capital is Paris.",
+    response="The capital of France is Paris.",
+)
+# result.flagged → False
+```
+
+Supports Python 3.10-3.13. Optional connectors for OpenAI, Anthropic, Google Gemini. Framework integrations for LangChain, CrewAI, Semantic Kernel, AutoGen.
+
+Domain-specific calibration achieves AUROC 0.90-0.99. Generic calibration: AUROC ~0.76.
+
+[GitHub](https://github.com/factlens/factlens) / [Documentation](https://docs.factlens.dev) / [PyPI](https://pypi.org/project/factlens/)

@@ -1,19 +1,6 @@
-[
-	{
-		"id": 1,
-		"icon": {
-			"type": "lucide",
-			"name": "cake"
-		},
-		"text": "1 year old"
-	},
-	{
-		"id": 2,
-		"icon": {
-			"type": "lucide",
-			"name": "earth"
-		},
-		"type": "lucide",
-		"text": "Made in Germany"
-	}
-]
+{
+  "name": "factlens",
+  "headline": "A geometric lens on factual accuracy",
+  "description": "Deterministic LLM hallucination detection via embedding geometry. No second LLM. Auditable. Open source.",
+  "shortDescription": "Geometric methods for LLM grounding verification"
+}

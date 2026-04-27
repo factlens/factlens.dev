@@ -1,0 +1,88 @@
+---
+title: "The red bird"
+date: 2026-01-10
+description: "Hallucinations in LLMs are red birds. A geometric essay on flocks, fiber bundles, and why detection requires local coordinates."
+tags: ["research", "hallucination-detection", "embeddings", "SGI"]
+---
+
+There is a flock that flies without a leader.
+
+No bird commands. No bird follows. Each bird watches only its neighbors — the ones close enough to see — and aligns with them. Turn when they turn. Climb when they climb.
+
+From the ground, it looks like a single organism. A mind.
+
+But there is no brain. Only geometry.
+
+Now imagine a bird that joins the flock. It flies with the same conviction, the same speed, the same apparent purpose. But its direction does not match its neighbors. Not dramatically — not opposite. Just a few degrees off. Enough that if you watched closely, you would see it drifting away from where the flock is going.
+
+This bird is not lost. It does not hesitate. It flies with perfect confidence toward a destination that does not exist.
+
+This is the red bird.
+
+## Local triviality
+
+The mathematicians have a name for what the flock does. They call it *local triviality*.
+
+The intuition is simple: imagine standing on Earth with a compass. "North" makes sense to you. Your neighbor agrees. But compare your compass with someone in Tokyo, and you'll find your "north" points somewhere different in three-dimensional space. You're both correct locally. But there's no global "up" that works everywhere on a curved surface.
+
+Locally, the rules are flat. Obvious. A cylinder.
+
+Globally, they twist. A Mobius strip.
+
+This is the fiber bundle. A space where every point has a direction attached to it, and nearby points agree — but distant points cannot. The topology forbids it.
+
+## The measurement
+
+There is a man who studies language models. He noticed something.
+
+When these models answer questions correctly, their answers move in a consistent direction through a space he cannot see but can measure. The direction varies by domain. But within each domain, there is coherence. The answers align with their neighbors.
+
+When the models hallucinate — when they invent facts with perfect confidence — the answers move differently. Not random. Just *elsewhere*. A few degrees off.
+
+He built a detector. It works by checking whether an answer moves with its flock.
+
+But here is what he discovered next:
+
+There is not one flock. There are many flocks, in many skies.
+
+The direction that means "grounded" in legal questions points somewhere entirely different in medical questions. When he tried to use one domain's flock to judge another domain's birds, detection dropped to chance. Useless.
+
+This is not a failure of the method. It is a feature of the geometry.
+
+## No global section
+
+The fiber bundle has no global section. Only local ones. You cannot use the legal flock to judge whether a medical bird belongs. The coordinate systems are incommensurable.
+
+Why does this happen?
+
+These embedding models learn through local optimization. Similar questions should relate similarly to their answers. But nothing enforces global consistency across domains. Each domain develops its own pattern independently.
+
+The structure emerges. It is not imposed.
+
+## Semantic laziness
+
+And there is one more thing.
+
+Why do language models hallucinate at all?
+
+The answer, it seems, is laziness. Semantic laziness. The model takes the path of least resistance. It orbits the question without traveling to the evidence. It generates plausible text without doing the geometric work of actually engaging the source.
+
+The hallucination is not a bug. It is a consequence of how the model navigates space.
+
+And now we can see it.
+
+## Detection
+
+The red bird does not know it is red.
+
+It flies with the same confidence as every other bird. It believes — if we can use that word — that it belongs.
+
+The only way to tell is to measure. To check whether its direction matches the local pattern.
+
+This is what geometric detection does. It doesn't ask whether the answer is true. It asks whether the answer moved the right way.
+
+*The red bird does not know it is red. The only way to tell is to watch which way it flies.*
+
+---
+
+*Read the paper: [Semantic Grounding Index](https://arxiv.org/abs/2512.13771) (arXiv:2512.13771)*

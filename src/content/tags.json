@@ -1,5 +1,15 @@
 [
-	{
-		"id": "guide"
-	}
+  "research",
+  "hallucination-detection",
+  "embeddings",
+  "SGI",
+  "DGI",
+  "taxonomy",
+  "mechanistic-interpretability",
+  "transformers",
+  "compliance",
+  "EU-AI-Act",
+  "semantic-laziness",
+  "geometric-methods",
+  "open-source"
 ]

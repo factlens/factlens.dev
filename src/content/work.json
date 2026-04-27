@@ -1,9 +1,20 @@
 [
-	{
-		"id": 1,
-		"duration": "2024 - present",
-		"company": "Astro Community",
-		"title": "Astro Theme",
-		"description": "Existing as an Astro theme for anyone to use."
-	}
+  {
+    "title": "Semantic Grounding Index (SGI)",
+    "description": "Ratio-based grounding verification for RAG systems. Measures whether a response engages its source material via angular geometry on the unit hypersphere.",
+    "url": "https://arxiv.org/abs/2512.13771",
+    "badge": "arXiv:2512.13771"
+  },
+  {
+    "title": "Geometric Taxonomy of Hallucinations",
+    "description": "Three-type hallucination classification via directional grounding. Von Mises-Fisher distributions on displacement vectors. Domain-specific calibration achieves AUROC 0.76-0.99.",
+    "url": "https://arxiv.org/abs/2602.13224",
+    "badge": "arXiv:2602.13224"
+  },
+  {
+    "title": "Rotational Dynamics of Factual Constraint Processing",
+    "description": "Mechanistic interpretability: transformers reject wrong answers via rotation, not rescaling. Phase transition at 1.6B parameters.",
+    "url": "https://arxiv.org/abs/2603.13259",
+    "badge": "arXiv:2603.13259"
+  }
 ]

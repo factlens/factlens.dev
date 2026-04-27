@@ -1,11 +1,17 @@
 [
-	{
-		"id": 1,
-		"icon": {
-			"type": "lucide",
-			"name": "github"
-		},
-		"text": "GitHub",
-		"link": "https://github.com/louisescher/spectre"
-	}
+  {
+    "platform": "github",
+    "url": "https://github.com/factlens",
+    "label": "GitHub"
+  },
+  {
+    "platform": "linkedin",
+    "url": "https://www.linkedin.com/in/javiermarin/",
+    "label": "LinkedIn"
+  },
+  {
+    "platform": "other",
+    "url": "https://arxiv.org/search/?query=javier+marin+hallucination&searchtype=all",
+    "label": "arXiv"
+  }
 ]
