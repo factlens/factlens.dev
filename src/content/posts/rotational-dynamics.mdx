@@ -1,76 +1,37 @@
 ---
-title: "What happens inside a language model when it processes a wrong answer"
-date: 2026-03-19
-description: "Transformers don't passively fail on incorrect input. They actively rotate away from it. And this mechanism only exists in models above a specific size."
+title: "Transformers reject wrong answers by rotating them"
+createdAt: "2026-03-05"
+description: "When a transformer processes a factually wrong completion, it doesn't just scale down the probability. It rotates the representation into a rejection subspace. This mechanism has a phase transition."
 tags: ["research", "mechanistic-interpretability", "transformers"]
+image: "../../assets/posts/rotational-dynamics.png"
 ---
 
-## The question nobody was asking
+There's a specific thing that happens inside a transformer when it encounters a factual claim that contradicts its training distribution.
 
-When a language model encounters a wrong answer, what happens inside the network?
+The conventional assumption is attenuation — the model reduces the probability of wrong tokens. Scales them down. The representation gets quieter.
 
-Most research on truthfulness in language models treats it as a static property. You probe a layer, find a direction that correlates with truth, and call it a day. This tells you *where* truthfulness might live, but not *how* the model processes the difference between correct and incorrect information as representations flow through the full depth of the network.
+That's not what happens.
 
-In our paper [How Transformers Reject Wrong Answers: Rotational Dynamics of Factual Constraint Processing](https://arxiv.org/abs/2603.13259), we tracked what happens to internal representations across every layer of four decoder-only transformer models when they process the same question with a correct versus an incorrect answer. The findings change how we should think about factual processing in these systems.
+## Rotation, not rescaling
 
-## The method: forced-completion probing
+When we track the intermediate representations through transformer layers, factually incorrect completions undergo a rotation in activation space. Not a scaling. A rotation.
 
-The experimental design is direct. Take a factual question: "The capital of France is..." Present it to the model with the correct continuation ("Paris") and with an incorrect continuation ("Berlin"). Then measure what happens to the internal representations at every layer, from input to output.
+The model doesn't make wrong answers quieter. It moves them somewhere else. The representation rotates into a subspace that downstream layers interpret as "reject this."
 
-We call this forced-completion probing. It is not about what the model generates — it is about what happens inside the model when it is forced to process known correct and known incorrect continuations of the same query.
+This is geometrically distinct from what happens to correct completions. Correct completions undergo incremental refinement — small adjustments that sharpen the representation without fundamentally changing its direction. Wrong completions get rotated.
 
-## Finding one: rotation, not rescaling
+## The phase transition
 
-The central result is about the *character* of the divergence between correct and incorrect processing paths.
+This rotational rejection mechanism doesn't exist in all models. It emerges at scale.
 
-When the model processes a correct continuation, the internal representations follow one trajectory through the layers. When it processes an incorrect continuation, the representations follow a different trajectory. These trajectories diverge. But how?
+Below approximately 1.6 billion parameters, models attenuate wrong answers without clean geometric structure. Above 1.6B, the rotational pattern appears. It's not gradual — it's a phase transition.
 
-The standard assumption would be that correct and incorrect paths differ in magnitude — that the model "amplifies" correct information and "dampens" incorrect information. This is not what we observe.
+This suggests that factual constraint processing is an emergent capability — something that appears when the model reaches sufficient capacity to dedicate geometric structure to the task.
 
-The displacement vectors between correct and incorrect paths maintain near-identical magnitudes throughout the network. What changes is their direction. The representations diverge through rotation, not through rescaling. The angular separation between correct and incorrect processing paths grows across layers while the vector magnitudes remain matched.
+## What this means
 
-The model is not treating correctness as a matter of "more" or "less." It is treating correctness as a matter of orientation in representational space. The distinction between a right answer and a wrong answer is geometric — a direction, not a distance.
-
-## Finding two: active suppression
-
-The second finding is about what the model does with incorrect input.
-
-The naive expectation is that the model passively fails — it receives a wrong answer, doesn't know what to do with it, and the correct answer fades from its internal state.
-
-That is not what happens.
-
-When the model processes an incorrect continuation, it actively suppresses the correct answer. The internal probability assigned to the correct token is driven *downward* — below where it would be if the model had simply received noise or irrelevant input. The model does not ignore the wrong answer. It recognises that something is wrong and actively pushes the correct answer further away.
-
-Passive failure and active suppression are different computational operations. Active suppression implies the model is doing work — spending computational resources to reject the incorrect input and distance itself from the correct alternative. The model is not confused. It is processing the conflict.
-
-## Finding three: the 1.6 billion parameter threshold
-
-Both phenomena — rotational divergence and active suppression — are entirely absent in smaller models.
-
-We tested across four model sizes. Below approximately 1.6 billion parameters, the correct and incorrect processing paths show no systematic divergence. The models process right answers and wrong answers in essentially the same way. There is no rotation. There is no suppression.
-
-At 1.6 billion parameters, both phenomena appear. Not gradually — they emerge. This suggests a phase transition in factual processing capability: below a threshold, models lack the internal machinery to distinguish correct from incorrect factual continuations at the representational level.
-
-This has implications for deployment. If you are running a model below this parameter threshold, the model is not merely "less accurate" at factual tasks. It lacks the internal mechanism for factual constraint processing entirely. No amount of prompting or fine-tuning can activate a mechanism that isn't there.
-
-## Why this matters beyond interpretability
-
-**For model selection:** The phase transition at 1.6 billion parameters is a concrete threshold. Below it, the model has no geometric mechanism for distinguishing correct from incorrect factual content. This matters for edge deployments, cost-constrained applications, and any context where smaller models are chosen for efficiency.
-
-**For detection methods:** If factual processing operates through rotation rather than magnitude, then detection methods that rely on activation magnitudes, confidence scores, or scalar probes are looking at the wrong signal. The discriminative information is in angular relationships, not in how large or small the activations are.
-
-**For mechanistic interpretability:** Single-layer probes cannot capture a phenomenon that unfolds across layers as a dynamic process. The rotation we observe is a trajectory — it develops across the full depth of the network. A probe at any single layer sees a snapshot, not the process.
-
-## Connection to hallucination detection
-
-This paper is the mechanistic companion to the [geometric taxonomy of hallucinations](https://arxiv.org/abs/2602.13224). The taxonomy classifies what goes wrong. The rotational dynamics paper investigates how the model processes factual constraints internally.
-
-Together, they point toward a picture: language models have specific geometric mechanisms for handling factual information, and these mechanisms leave detectable traces in both internal representations and output embeddings. Detection works when we measure the right geometric quantities — angles and rotations, not magnitudes and scalars.
-
-The constraint we identified in the taxonomy — that Type III factual errors are undetectable via embeddings — is consistent with the mechanistic finding. The rotational mechanism distinguishes correct from incorrect processing paths internally, but this distinction may not survive the compression from internal high-dimensional state to output embedding. The internal geometry is richer than the output geometry.
-
-This is not a contradiction. It is a boundary: the boundary between what can be detected from outside and what requires access to internal states.
+The model knows more than it says. The geometry tells you what it knows.
 
 ---
 
-*Read the full paper: [Rotational Dynamics of Factual Constraint Processing](https://arxiv.org/abs/2603.13259) (arXiv:2603.13259)*
+*This work is detailed in [Rotational Dynamics of Factual Constraint Processing](https://arxiv.org/abs/2603.13259) (arXiv:2603.13259)*

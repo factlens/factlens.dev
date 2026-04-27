@@ -12,20 +12,20 @@ The answer is yes, within measurable boundaries. Embedding geometry encodes enou
 
 Three papers form the foundation:
 
-1. **Semantic Grounding Index** (arXiv:2512.13771) — ratio-based grounding verification for RAG systems. Measures angular proximity between response, context, and query on the unit hypersphere.
+1. **Semantic Grounding Index** (arXiv:2512.13771) — ratio-based grounding verification for RAG systems.
 
-2. **A Geometric Taxonomy of Hallucinations** (arXiv:2602.13224) — three-type hallucination classification. Von Mises-Fisher distributions on displacement vectors. Domain-specific calibration. The confabulation benchmark.
+2. **A Geometric Taxonomy of Hallucinations** (arXiv:2602.13224) — three-type hallucination classification. The confabulation benchmark.
 
-3. **Rotational Dynamics of Factual Constraint Processing** (arXiv:2603.13259) — mechanistic interpretability: transformers reject wrong answers via rotation, not rescaling. Phase transition at 1.6B parameters.
+3. **Rotational Dynamics of Factual Constraint Processing** (arXiv:2603.13259) — transformers reject wrong answers via rotation, not rescaling. Phase transition at 1.6B parameters.
 
 ## Philosophy
 
-factlens is verification triage, not truth detection. It tells you which responses earned the right to be trusted and which need human review. It does not claim to know what is true. It measures geometric relationships and reports them.
+factlens is verification triage, not truth detection. It tells you which responses earned the right to be trusted and which need human review.
 
-The methods are deterministic. The same input produces the same score every time. No stochastic variation. No black-box judge. Auditable by design.
+The methods are deterministic. The same input produces the same score every time. Auditable by design.
 
 ## Open source
 
-The [factlens library](https://github.com/factlens/factlens) is MIT licensed. The [hallucination benchmark](https://github.com/factlens/hallucination-benchmark) is CC BY 4.0. The research papers are on arXiv.
+The [factlens library](https://github.com/factlens/factlens) is MIT licensed. The [hallucination benchmark](https://github.com/factlens/hallucination-benchmark) is CC BY 4.0.
 
 Contact: [javier@jmarin.info](mailto:javier@jmarin.info)

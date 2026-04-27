@@ -1,11 +1,10 @@
 ---
 title: "Understanding semantic laziness in LLM responses"
-date: 2026-01-05
+createdAt: "2026-01-05"
 description: "Why LLMs take shortcuts and how geometric analysis reveals these patterns before they become production incidents."
 tags: ["research", "semantic-laziness", "SGI"]
+image: "../../assets/posts/semantic-laziness.png"
 ---
-
-## Semantic laziness
 
 There's a particular way language models fail that doesn't look like failure at all.
 
@@ -15,55 +14,23 @@ But somewhere between the question and the answer, something didn't happen. The 
 
 Here's the setup: you have a RAG system. User asks a question. Your system retrieves relevant documents. The model gets the question and the evidence. Everything it needs to answer correctly is right there in the context window.
 
-And yet the answer is wrong. Not because the retrieval failed. Not because the documents were bad. The evidence was there. The model just... didn't use it.
-
-It took the shortcut. It generated what sounded right instead of what was grounded in the material you gave it.
+And yet the answer is wrong. Not because the retrieval failed. Not because the documents were bad. The evidence was there. The model just didn't use it.
 
 We call this semantic laziness.
 
-## Why does this happen?
-
-Language models don't retrieve truth. They predict plausible next tokens. And plausibility is not the same as grounding.
-
-When a model has context available but doesn't engage it, it's because the path of least resistance leads elsewhere. The model's learned patterns — what sounds right, what typically follows — are stronger than the pull of the specific evidence in front of it.
-
-The model isn't lying. It isn't broken. It's doing exactly what it was trained to do: generate probable text. Sometimes probable and grounded align. Sometimes they don't.
-
-Semantic laziness is the gap.
-
-## The detection problem
-
-The practical problem is detection.
-
-A lazy response looks identical to a grounded response. Same fluency. Same confidence. Same structure. You can't tell them apart by reading. The failure mode isn't obvious errors — it's confident, well-formed text that happens to ignore the evidence.
-
-Traditional evaluation doesn't catch this. BLEU scores measure surface similarity. BERTScore measures semantic overlap. Neither asks whether the response actually engaged the source material.
-
-LLM-as-judge doesn't solve it either. You're using a system prone to laziness to detect laziness. The judge has the same failure mode as the defendant.
-
 ## Geometry as measurement
-
-What works is measuring the relationship between three things: the question, the context, and the response.
 
 A grounded response has a specific relationship to its source material. A lazy response has a different relationship — it stays closer to the question, orbiting the query without traveling to the evidence.
 
 This relationship is measurable. Not by asking another model. By geometry.
 
-The principle is simple: grounded responses move toward their sources. Lazy responses don't. That difference leaves a signature you can detect.
+Grounded responses move toward their sources. Lazy responses don't. That difference leaves a signature you can detect.
 
 ## Triage, not truth
-
-You don't need to fact-check every response. You need to triage.
-
-Low grounding score doesn't prove a response is wrong. But it tells you the model didn't earn the right to be confident. It took the shortcut.
-
-In production — where your AI talks to customers, summarizes contracts, advises on medical questions — that's often enough to know you need a human in the loop.
 
 Flag the lazy responses. Let the grounded ones through. Review the uncertain cases.
 
 Not perfect. But better than hoping.
-
-The model won't tell you when it's being lazy. It doesn't know. You have to measure.
 
 ---
 
