@@ -15,6 +15,6 @@
     "id": 3,
     "icon": { "type": "simple-icons", "name": "arxiv" },
     "text": "arXiv",
-    "link": "https://arxiv.org/search/?query=javier+marin+hallucination&searchtype=all"
+    "link": "https://arxiv.org/search/cs?searchtype=author&query=Mar%C3%ADn,+J"
   }
 ]
