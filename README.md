@@ -1,42 +1,29 @@
-![Spectre, a terminal-inspired theme for Astro.](./images/README.png)
+![factlens — geometric LLM hallucination detection](./public/img/Birds.png)
 
-Spectre is a terminal-inspired theme for Astro, built using TypeScript and Astro.
+# factlens.dev
 
-## Getting Started
+Source for [factlens.dev](https://factlens.dev) — the research site for geometric LLM grounding verification.
 
-[![Open in StackBlitz](https://developer.stackblitz.com/img/open_in_stackblitz.svg)](https://stackblitz.com/github/louisescher/spectre/tree/master)
-[![Open with CodeSandbox](https://assets.codesandbox.io/github/button-edit-lime.svg)](https://codesandbox.io/p/sandbox/github/louisescher/spectre/tree/master)
+factlens detects hallucinations using embedding geometry. No second LLM. Deterministic. Auditable.
 
-Alternatively, you can create a new Astro project with Spectre like this:
+## What's here
 
-```bash
-# npm
-npm create astro@latest -- --template louisescher/spectre
+- Research blog on hallucination detection, EU AI Act compliance, and mechanistic interpretability
+- Project pages for the [factlens library](https://github.com/factlens/factlens) and [hallucination benchmark](https://github.com/factlens/hallucination-benchmark)
+- Documentation at [docs.factlens.dev](https://docs.factlens.dev)
 
-# pnpm
-pnpm create astro@latest --template louisescher/spectre
+## Research
 
-# yarn
-yarn create astro --template louisescher/spectre
-```
+Three papers on arXiv:
 
-## Features
+1. **Semantic Grounding Index** (arXiv:2512.13771) — ratio-based grounding verification for RAG systems
+2. **A Geometric Taxonomy of Hallucinations** (arXiv:2602.13224) — three-type classification with confabulation benchmark
+3. **Rotational Dynamics of Factual Constraint Processing** (arXiv:2603.13259) — transformers reject wrong answers via rotation, not rescaling
 
-- 100 / 100 Lighthouse performance
-- Responsive for all screen sizes
-- Fully accessible
-- Type-Safe
-- Auto-generated sitemap
-- Markdown / MDX Support
-- Builds on content collections
-- Search powered by [pagefind](https://pagefind.app)
-- Comments powered by [giscus](https://giscus.app) (can be turned off)
-- More!
+## Built with
 
-## Curious?
+[Spectre](https://github.com/louisescher/spectre) — a terminal-inspired Astro theme. Deployed on GitHub Pages.
 
-Head over to [the preview page](https://spectre.lou.gg) to find out more!
+## License
 
-### Spectre Integration
-
-If you want to know more about how the custom integration that is used in the `astro.config.ts` file works, head over to the [integration's own README](https://github.com/louisescher/spectre/tree/master/package)!
+Site content © 2025–2026 Javier Marin. The factlens library is [MIT licensed](https://github.com/factlens/factlens/blob/main/LICENSE). The hallucination benchmark is [CC BY 4.0](https://github.com/factlens/hallucination-benchmark/blob/main/LICENSE).
