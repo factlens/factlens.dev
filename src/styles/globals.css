@@ -1,10 +1,10 @@
 :root {
-	--primary: #8c5cf5;
+	--primary: #fc7604;
 	/* Needed for some hover effects. This is just the R, G and B values of the hex color above */
-	--primary-rgb: 140, 92, 245;
+	--primary-rgb: 252, 118, 4;
 	/* Used for links */
-	--primary-light: #a277ff;
-	--primary-lightest: #c2a8fd;
+	--primary-light: #fd9a42;
+	--primary-lightest: #fec08a;
 }
 
 .overview-list {

@@ -16,6 +16,7 @@ const config = defineConfig({
 		sitemap(),
 		spectre({
 			name: 'factlens',
+			themeColor: '#fc7604',
 			openGraph: {
 				home: {
 					title: 'factlens',
