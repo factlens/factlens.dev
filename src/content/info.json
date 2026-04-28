@@ -11,11 +11,6 @@
   },
   {
     "id": 3,
-    "icon": { "type": "lucide", "name": "book-open" },
-    "text": "3 research papers on arXiv"
-  },
-  {
-    "id": 4,
     "icon": { "type": "simple-icons", "name": "python" },
     "text": "Open-source Python library (MIT)"
   }
